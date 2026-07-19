@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#9ddcff" />
+  <title>Koopa Run</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell" aria-label="Koopa Run game">
+    <canvas id="game" aria-label="Koopa Run play area"></canvas>
+    <header class="hud" aria-live="polite">
+      <div class="distance-card"><span>Distance</span><strong id="distance">0m</strong></div>
+      <div class="level-card"><span>Level</span><strong id="level">1</strong></div>
+      <div class="status-card" id="powerStatus">☁️ Clear skies</div>
+      <button id="pauseButton" class="icon-button" aria-label="Pause game" title="Pause game">Ⅱ</button>
+    </header>
+
+    <section id="startScreen" class="overlay start-screen">
+      <div class="brand-mark">🐕<i>✦</i></div>
+      <p class="eyebrow">A tiny sky adventure</p>
+      <h1>Koopa <em>Run</em></h1>
+      <p class="intro">Keep Koopa from getting stuck under the couch.</p>
+      <button id="startButton" class="primary-button">Start floating <span>↑</span></button>
+      <p class="tap-hint">Tap anywhere to float · Grab bones · Avoid sofas</p>
+      <div class="score-row">
+        <div><span>Today’s furthest</span><strong id="dailyBest">0m</strong></div>
+        <div><span>Furthest ever</span><strong id="bestEver">0m</strong></div>
+      </div>
+      <div class="power-key" aria-label="Power ups">
+        <span>🛡️ Shield</span><span>🐢 Slow</span><span>⚡ Lightning</span><span>🚀 Space</span>
+      </div>
+    </section>
+
+    <section id="pauseScreen" class="overlay compact hidden">
+      <div class="bubble-panel"><div class="pause-cloud">🐕</div><h2>Taking five</h2><p>Koopa is enjoying the view.</p><button id="resumeButton" class="primary-button">Keep floating</button></div>
+    </section>
+
+    <section id="gameOverScreen" class="overlay compact hidden">
+      <div class="bubble-panel crash-panel">
+        <div class="crash-icon">🐕<span>💫</span></div>
+        <p class="eyebrow">Sky boop!</p><h2 id="crashMessage">Koopa is regrouping.</h2>
+        <div class="final-score"><span>Flight distance</span><strong id="finalDistance">0m</strong></div>
+        <div class="run-chart" aria-label="Recent runs chart"><span class="chart-label">Recent flights</span><div id="chartBars" class="chart-bars"></div></div>
+        <p id="newBest" class="new-best hidden">✦ New personal best! ✦</p>
+        <button id="restartButton" class="primary-button">Float again <span>↻</span></button>
+        <button id="homeButton" class="text-button">Back to launch pad</button>
+      </div>
+    </section>
+
+    <button id="muteButton" class="mute-button" aria-label="Mute sound" aria-pressed="false" title="Toggle sound">♪</button>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
