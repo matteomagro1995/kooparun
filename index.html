@@ -42,6 +42,14 @@
         <div class="crash-icon">🐕<span>💫</span></div>
         <p class="eyebrow">Sky boop!</p><h2 id="crashMessage">Koopa is regrouping.</h2>
         <div class="final-score"><span>Flight distance</span><strong id="finalDistance">0m</strong></div>
+        <section class="world-board" aria-labelledby="worldBoardTitle">
+          <div class="world-board-heading"><span>🌍</span><strong id="worldBoardTitle">World record</strong><small id="leaderboardState">Loading flights…</small></div>
+          <ol id="leaderboardList" class="leaderboard-list" aria-live="polite"></ol>
+          <form id="leaderboardJoin" class="leaderboard-join hidden">
+            <label for="leaderboardName">Join the world chart</label>
+            <div><input id="leaderboardName" maxlength="18" autocomplete="nickname" placeholder="Koopa fan name" required /><button type="submit">Save</button></div>
+          </form>
+        </section>
         <div class="run-chart" aria-label="Recent runs chart"><span class="chart-label">Recent flights</span><div id="chartBars" class="chart-bars"></div></div>
         <p id="newBest" class="new-best hidden">✦ New personal best! ✦</p>
         <button id="restartButton" class="primary-button">Float again <span>↻</span></button>
